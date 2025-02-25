@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ateek General Store Inventory Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Ateek General Store Inventory Management</h1>
+  </header>
+
+  <!-- Inventory Section -->
+  <section id="inventory">
+    <h2>Current Stock</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Total Stock</th>
+          <th>Sold</th>
+          <th>Available</th>
+        </tr>
+      </thead>
+      <tbody id="stockTable">
+        <!-- Inventory data will be populated here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Purchase Records Section -->
+  <section id="purchaseRecords">
+    <h2>Purchase Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Purchase Date</th>
+          <th>Quantity Purchased</th>
+          <th>Price per Unit</th>
+          <th>Total Cost</th>
+        </tr>
+      </thead>
+      <tbody id="purchaseTable">
+        <!-- Purchase records will be populated here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sales Records Section -->
+  <section id="salesRecords">
+    <h2>Sales Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Customer</th>
+          <th>Sale Date</th>
+          <th>Quantity Sold</th>
+          <th>Price per Unit</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody id="salesTable">
+        <!-- Sales records will be populated here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Form to Add Purchase Record -->
+  <section id="addPurchase">
+    <h2>Add Purchase Record</h2>
+    <form id="purchaseForm">
+      <label for="purchaseProduct">Product Name:</label>
+      <input type="text" id="purchaseProduct" name="purchaseProduct" required placeholder="e.g. Coloring" />
+
+      <label for="purchaseDate">Purchase Date:</label>
+      <input type="date" id="purchaseDate" name="purchaseDate" required />
+
+      <label for="purchaseQuantity">Quantity Purchased:</label>
+      <input type="number" id="purchaseQuantity" name="purchaseQuantity" min="1" required />
+
+      <label for="purchasePrice">Price per Unit:</label>
+      <input type="number" id="purchasePrice" name="purchasePrice" min="0" step="0.01" required />
+
+      <button type="submit">Add Purchase</button>
+    </form>
+  </section>
+
+  <!-- Form to Add Sale Record -->
+  <section id="addSale">
+    <h2>Add Sale Record</h2>
+    <form id="saleForm">
+      <label for="saleProduct">Product:</label>
+      <select id="saleProduct" name="saleProduct">
+        <!-- Options will be populated dynamically based on available products -->
+      </select>
+
+      <label for="customer">Customer Name:</label>
+      <input type="text" id="customer" name="customer" required />
+
+      <label for="saleDate">Sale Date:</label>
+      <input type="date" id="saleDate" name="saleDate" required />
+
+      <label for="saleQuantity">Quantity Sold:</label>
+      <input type="number" id="saleQuantity" name="saleQuantity" min="1" required />
+
+      <label for="salePrice">Price per Unit:</label>
+      <input type="number" id="salePrice" name="salePrice" min="0" step="0.01" required />
+
+      <button type="submit">Add Sale</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
